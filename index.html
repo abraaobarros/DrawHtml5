@@ -1,0 +1,41 @@
+
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<script>
+	$(document).ready(function() {
+	    b = new Board("canvas1");
+		tool = new Tools(b);
+	});
+	
+</script>
+<body>
+	<canvas style="border:1px solid black"id="canvas1" width="400", height="500">
+	</canvas>
+	<div class="barra">
+		<a href="#" onclick="fill()" ><img src="img/fill.png" width="30px"alt=""></a>
+		<a href="#" id="black" onclick="b.current_color = [0,0,0,255]" ><span class="cor black selected"></span></a>
+		<a href="#" id="blue" onclick="b.current_color = [0,0,255,255]" ><span class="cor blue"></span></a>
+		<a href="#" id="green" onclick="b.current_color = [0,255,0,255]" ><span class="cor green"></span></a>
+		<a href="#" id="red" onclick="b.current_color = [255,0,0,255]" ><span class="cor red"></span></a>
+
+		<a href="#" id="linha" onclick="tool.drawline()" >linha</a>
+		<a href="#" id="circulo" onclick="tool.drawcircle()" >circulo</a>
+		<a href="#" id="circulo" onclick="tool.drawrect()" >rect</a>
+		<a href="#" id="select" onclick="tool.select()" >selecionar</a>
+		<a href="#" id="select" onclick="tool.move()" >mover</a>
+		<a href="#" id="select" onclick="tool.scale()" >ampliar</a>
+		<a href="#" id="select" onclick="tool.delete()" >deletar</a>
+		<a href="#" id="select" onclick="tool.rotate()" >rotacionar</a>
+		<a href="#" id="preencher" onclick="tool.fill()" >preencher</a>
+		<a href="#" id="limpar" onclick="b.clean()" >limpar</a>
+	</div>
+	<div class="barra_bottom">
+		<a href="#"  onclick="b.current_pattern = PATTERN.SOLID" ><span class="line solid selected"><hr></span></a>
+		<a href="#"  onclick="b.current_pattern = PATTERN.DASHED" ><span class="line dashed"><hr></span></a>
+		<a href="#"  onclick="b.current_pattern = PATTERN.DOTTED" ><span class="line dotted"><hr></span></a>
+	</div>
+</body>
+
